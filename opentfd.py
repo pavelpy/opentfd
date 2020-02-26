@@ -1,17 +1,16 @@
 import asyncio
-from datetime import timedelta
-from time import time, sleep
+import getopt
+import sys
 from contextlib import suppress
+from time import time
 
 import mtranslate
-from telethon import TelegramClient, events, sync, errors, custom
+from telethon import TelegramClient, events, errors, custom
 from telethon.tl.types import UpdateDraftMessage
+
+import secret
 from proxy import mediatube_proxy
 from supported_langs import supported_langs
-import secret
-import getopt
-import re
-import sys
 
 default_proxy = None
 try:
