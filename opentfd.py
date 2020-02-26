@@ -118,7 +118,7 @@ async def merger(event: custom.Message):
             elif event_time - last_msg_time < MERGE_TIMEOUT:
                 try:
                     await merge_semaphore.acquire()
-                    last_msg = await last_msg.edit('{0}\n{1}'.format(last_msg.text, event.text))
+                    last_msg = await last_msg.edit('{0} {1}'.format(last_msg.text, event.text))
                     last_msg_time = event_time
                     await event.delete()
                 finally:
